@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo - Petrópolis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: #f8f9fa; /* Fundo cinza claro */
+            color: #343a40; /* Texto cinza escuro */
+        }
+
+        header {
+            background-color: #d4edda; /* Verde claro */
+            color: #155724; /* Verde escuro */
+            text-align: center;
+            padding: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .weather-box {
+            background-color: #f5f5dc; /* Bege claro */
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .weather-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #f8bfe6; /* Rosa claro */
+            margin-bottom: 20px;
+        }
+
+        .weather-box p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #343a40; /* Cinza escuro */
+        }
+
+        .highlight {
+            font-size: 24px;
+            font-weight: bold;
+            color: #155724; /* Verde escuro */
+        }
+
+        footer {
+            background-color: #d4edda; /* Verde claro */
+            text-align: center;
+            padding: 10px;
+            color: #155724;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Previsão do Tempo - Petrópolis
+    </header>
+
+    <div class="container">
+        <div class="weather-box" id="weather">
+            <h2>Carregando previsão do tempo...</h2>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Chuva Segura. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        // URL da API gratuita do Open-Meteo
+        const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=-22.5039&longitude=-43.1926&current_weather=true&daily=precipitation_sum&timezone=America/Sao_Paulo`;
+
+        async function fetchWeather() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                const weatherBox = document.getElementById('weather');
+                const current = data.current_weather;
+                const precipitation = data.daily.precipitation_sum[0]; // Quantidade de chuva prevista
+
+                weatherBox.innerHTML = `
+                    <h2>Previsão para Hoje</h2>
+                    <p><span class="highlight">Temperatura Atual:</span> ${current.temperature}°C</p>
+                    <p><span class="highlight">Condição:</span> ${current.weathercode === 3 ? "Nublado" : "Claro"}</p>
+                    <p><span class="highlight">Velocidade do Vento:</span> ${current.windspeed} km/h</p>
+                    <p><span class="highlight">Vai chover?</span> ${precipitation > 0 ? "Sim" : "Não"}</p>
+                    <p><span class="highlight">Quantidade de Chuva:</span> ${precipitation} mm</p>
+                `;
+            } catch (error) {
+                console.error('Erro ao buscar dados da API:', error);
+                document.getElementById('weather').innerHTML = '<h2>Não foi possível carregar a previsão do tempo.</h2>';
+            }
+        }
+
+        fetchWeather();
+    </script>
+</body>
+</html>

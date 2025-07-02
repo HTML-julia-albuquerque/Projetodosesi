@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de Informações e Imagem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: #c1acc4;
+            text-decoration-color: #1b1111;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: space-between; /* Garante a separação dos elementos */
+            padding: 20px; /* Adiciona espaçamento interno no container */
+        }
+        .info-box {
+            width: 40%;
+            padding: 20px;
+            margin-left: 40px; /* Adiciona espaçamento entre a caixa e a parede esquerda */
+            background-color: #f5f5dc; /* Verde */
+            color: rgb(165, 121, 143);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .info-box h1 {
+            margin-top: 0;
+        }
+        .info-box p {
+            line-height: 1.6;
+        }
+        .image-container {
+            width: 60%;
+            margin-right: 40px; /* Adiciona espaçamento entre a imagem e a parede direita */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container img {
+            max-width: 90%; /* Evita que a imagem ultrapasse os limites */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-box">
+            <h1>Envie sua foto!</h1>
+            <ul>
+                <li>Não enviar fotografias antigas ou retiradas da internet;</li>
+                <li>Proibido fotos que fujam do intuito do aplicativo, como prostituição, divulgação (que não seja ponto de apoio ou informações que ajudem os usuários), rostos e qualquer outro conteúdo que não se encaixe na aba.</li>
+                <li>Identifique o horário (turno, hora e minuto) e data (dia da semana, dia do mês e mês).</li>
+                
+            </ul>
+            <form action="upload.php" method="POST" enctype="multipart/form-data">
+                <label for="file">Escolha uma foto:</label>
+                <input type="file" id="file" name="file" accept="image/*" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="image-container">
+            <img src="../imagens/smart-camera (2) (1).png" alt="Imagem grande do lado direito">
+        </div>
+    </div>
+</body>
+</html>

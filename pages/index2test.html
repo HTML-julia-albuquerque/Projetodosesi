@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuva Segura - Página Inicial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: #9db39d; /* Fundo cinza claro */
+            color: #343a40; /* Texto cinza escuro */
+        }
+
+        header {
+            background-color: #d4edda; /* Verde claro */
+            color: #155724; /* Verde escuro */
+            text-align: center;
+            padding: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Espaço entre os botões */
+            margin: 20px 0;
+        }
+
+        .button-container button {
+            background-color: #f8bfe6; /* Rosa claro */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .button-container button:hover {
+            background-color: #f5a3d9; /* Tom mais escuro ao passar o mouse */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 165px;
+        }
+
+        .section, .image-box {
+            background: #f5f5dc; /* Fundo bege claro */
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #343a40; /* Cinza escuro */
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #343a40; /* Cinza escuro */
+        }
+
+        .images-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-box {
+            text-align: center;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-box p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #343a40; /* Cinza escuro */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #d4edda; /* Verde claro */
+            color: #155724;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Bem-vindo ao Chuva Segura
+    </header>
+
+    <div class="button-container">
+        <button onclick="window.location.href='index4.html';">Previsão do tempo</button>
+        <button onclick="window.location.href='index3.html';">Mapa de risco</button>
+        <button onclick="window.location.href='index5.html';">Envie sua Foto!</button>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Bem-vindo ao nosso aplicativo!</h2>
+            <p>Aqui buscaremos ajudá-lo quando a nossa cidade estiver em risco de fortes chuvas e alagamentos. Será os seus "olhos" nos pontos mais perigosos perto de você, o auxiliando a estar em segurança. Ele também serve como um banco de informações, contendo imagens tiradas em tempo real por Petropolitanos e até por câmeras de segurança, tudo isso para você poder analizar o quanto esta chuvendo e que lugares estão alagados.</p>
+        </div>
+        <div class="section">
+            <h2>Sobre nós</h2>
+            <p>Esse app foi criado com carinho por Geovanna Telles, Júlia Andrade, Maria Laura Ramos e Gabrielle Gomes.</p>
+        </div>
+        <div class="section">
+            <h2>Imagens enviadas</h2>
+            <div class="images-container">
+                <div class="image-box">
+                    <img src="../imagens/Chuvas intensas interditam subidas para Petrópolis e Teresópolis.jpg" alt="Chuva leve">
+                    <p>12/03/2025
+                        Estou aqui no pedágio de Petrópolis e posso dizer que a chuva está muito apertada agora, e provavelmente terá desabamento de terra na estrada. Sugiro que escolham outro momento para descer.
+                    </p>
+                </div>
+                <div class="image-box">
+                    <img src="../imagens/Flagrante de chuva na Rua 16 de Março.jpg" alt="Paisagem rural">
+                    <p>12/03/2025
+                        Chuvinha gostosa no centro de Petrópolis, o rio está estável e sem ruas alagadas por perto! É um bom momento para pegar seu guarda-chuva e dar uma voltinha no centro para fazer compras.</p>
+                </div>
+                <div class="image-box">
+                    <img src="../imagens/baixados (2).jpg" alt="Gotas de chuva">
+                    <p>12/03/2025
+                        Chuva rala perto do obelisco...</p>
+                </div>
+                <div class="image-box">
+                    <img src="../imagens/Petrópolis com chuva_ 16 sugestões do que fazer na cidade - Sou Petrópolis.jpg" alt="Parque na chuva">
+                    <p>12/03/2025
+                        Estou em frente da Catedral e o rio parece estar enchendo mais e mais! Não é uma boa hora para vir passear no centro, ainda mais que a prevesão do tempo está dizendo que a chuva vai piorar!</p>
+                </div>
+                <div class="image-box">
+                    <img src="../imagens/baixados (3).jpg" alt="Raios de sol e chuva">
+                    <p>12/03/2025
+                        Chuva moderada.</p>
+                </div>
+                <div class="image-box">
+                    <img src="../imagens/Obelisco.jpg" alt="Árvores molhadas">
+                    <p>12/03/2025
+                        O tempo está lindo agora no centro!
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Chuva Segura. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
